@@ -1,0 +1,231 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap');
+
+@theme {
+  --color-pastel-blue: #A8D8EA;
+  --color-pastel-pink: #FFB6C1;
+  --color-pastel-purple: #DCD6F7;
+  --color-pastel-green: #B4E7CE;
+  --color-pastel-yellow: #FFF4A3;
+  --color-pastel-peach: #FFCBA4;
+
+  --color-dark-bg: #1a1a2e;
+  --color-dark-card: #16213e;
+  --color-dark-text: #e4e4e4;
+
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+  --font-family-display: 'Poppins', system-ui, sans-serif;
+
+  /* Animations personnalisées */
+  --animate-blob: blob 7s infinite;
+  --animate-float: float linear infinite;
+  --animate-gradient: gradient 3s ease infinite;
+  --animate-scroll: scroll 2s ease-in-out infinite;
+  --animate-fade-in-down: fade-in-down 0.8s ease-out forwards;
+  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+}
+
+/* Keyframes */
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px);
+    opacity: 0;
+  }
+}
+
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utilities */
+@utility animate-blob {
+  animation: blob 7s infinite;
+}
+
+@utility animate-float {
+  animation: float linear infinite;
+}
+
+@utility animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+@utility animate-scroll {
+  animation: scroll 2s ease-in-out infinite;
+}
+
+@utility animate-fade-in-down {
+  animation: fade-in-down 0.8s ease-out forwards;
+}
+
+@utility animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+@utility animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+@utility animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+@utility animation-delay-600 {
+  animation-delay: 0.6s;
+}
+
+@utility animation-delay-800 {
+  animation-delay: 0.8s;
+}
+
+@utility animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+@utility animation-delay-1200 {
+  animation-delay: 1.2s;
+}
+
+@utility animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+@utility animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+@utility bg-grid-pattern {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Base styles */
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-display);
+}
+
+/* Utilities personnalisées */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Effet de focus accessible */
+*:focus-visible {
+  outline: none;
+  ring: 2px;
+  ring-color: light-dark(var(--color-pastel-blue), var(--color-pastel-purple));
+  ring-offset: 2px;
+  ring-offset-color: light-dark(white, var(--color-dark-bg));
+}
+
+/* Transitions globales pour le mode sombre */
+* {
+  transition: color 200ms, background-color 200ms, border-color 200ms;
+}
+
+/* Empêcher le scroll lors de l'ouverture de la modal */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Animation fade-in-up */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Glass card effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}

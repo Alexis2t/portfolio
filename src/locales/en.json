@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "Home",
+    "education": "Education",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "title": "Full Stack Developer",
+    "downloadCV": "Download CV",
+    "available": "Available for new projects",
+    "name": "Alexis De Temmerman",
+    "role": "Full Stack Developer",
+    "description": "Specialized in Ruby on Rails, Vue.js, React.js and modern technologies.",
+    "cta": {
+      "projects": "View my projects",
+      "contact": "Contact me"
+    }
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "My academic background",
+    "continousLearning": "🎓 Continuous learning and technology watch"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies I master through my projects",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools & Others",
+    "legend": "Legend - Project sizes",
+    "largeProject": "Large project (9+ months)",
+    "mediumProject": "Medium project (3-9 months)",
+    "smallProject": "Small project (-3 months)",
+    "usedIn": "Used in"
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "subtitle": "My career path",
+    "present": "Present",
+    "achievementsTitle": "Key Achievements",
+    "newOpportunities": "💼 Available for new opportunities"
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "Discover my achievements",
+    "featured": "Featured Project",
+    "viewDetails": "View details",
+    "modal": {
+      "technologies": "Technologies used",
+      "skills": "Skills developed",
+      "process": "Creation process",
+      "goal": "Project goal",
+      "visit": "Visit website",
+      "close": "Close"
+    },
+    "imagesGallery": "Images Gallery"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Feel free to reach out",
+    "email": "Email",
+    "phone": "Phone",
+    "availableOn": "Available on",
+    "clickToContact": "Click to contact me",
+    "clickToReveal": "Click to reveal",
+    "orFollowMe": "Or follow me"
+  },
+  "footer": {
+    "copyright": "All rights reserved",
+    "madeWith": "Made with",
+    "by": "by"
+  }
+}

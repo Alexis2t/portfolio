@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "Introduction",
+    "education": "Formations",
+    "skills": "Compétences",
+    "experience": "Expérience",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "title": "Développeur Full Stack",
+    "downloadCV": "Télécharger CV",
+    "available": "Disponible pour de nouveaux projets",
+    "name": "Alexis De Temmerman",
+    "role": "Développeur Full Stack",
+    "description": "Spécialisé en Ruby on Rails, Vue.js, React.js et technologies modernes.",
+    "cta": {
+      "projects": "Voir mes projets",
+      "contact": "Me contacter"
+    }
+  },
+  "education": {
+    "title": "Formations",
+    "subtitle": "Mon parcours académique",
+    "continousLearning": "🎓 Formation continue et veille technologique"
+  },
+  "skills": {
+    "title": "Compétences",
+    "subtitle": "Technologies que je maîtrise à travers mes projets",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Outils & Autres",
+    "legend": "Légende - Taille des projets",
+    "largeProject": "Grand projet (9+ mois)",
+    "mediumProject": "Projet moyen (3-9 mois)",
+    "smallProject": "Petit projet (-3 mois)",
+    "usedIn": "Utilisé dans"
+  },
+  "experience": {
+    "title": "Expériences Professionnelles",
+    "subtitle": "Mon parcours professionnel",
+    "present": "Présent",
+    "achievementsTitle": "Réalisations clés",
+    "newOpportunities": "💼 Disponible pour de nouvelles opportunités"
+  },
+  "projects": {
+    "title": "Mes Projets",
+    "subtitle": "Découvrez mes réalisations",
+    "featured": "Projet Principal",
+    "viewDetails": "Voir détails",
+    "modal": {
+      "technologies": "Technologies utilisées",
+      "skills": "Compétences développées",
+      "process": "Processus de création",
+      "goal": "Objectif du projet",
+      "visit": "Visiter le site",
+      "close": "Fermer"
+    },
+    "imagesGallery": "Galerie d'images"
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "subtitle": "N'hésitez pas à me contacter",
+    "email": "Email",
+    "phone": "Téléphone",
+    "availableOn": "Disponible sur",
+    "clickToContact": "Cliquez pour me contacter",
+    "clickToReveal": "Cliquez pour révéler",
+    "orFollowMe": "Ou suivez-moi"
+  },
+  "footer": {
+    "copyright": "Tous droits réservés",
+    "madeWith": "Fait avec",
+    "by": "par"
+  }
+}
