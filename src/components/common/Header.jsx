@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { FaBars, FaTimes, FaSun, FaMoon, FaGlobe } from "react-icons/fa";
 
@@ -8,6 +8,8 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   // const [isDark, setIsDark] = useState(true);
 
+  const hasSetInitialLang = useRef(false);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -16,6 +18,14 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!hasSetInitialLang.current) {
+      const browserLang = (navigator.language || navigator.userLanguage).split("-")[0];
+      i18n.changeLanguage(browserLang);
+      hasSetInitialLang.current = true; // prevent future overrides
+    }
+  }, [i18n]);
 
   // const toggleTheme = () => {
   //   setIsDark(!isDark);
