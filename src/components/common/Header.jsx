@@ -21,7 +21,10 @@ const Header = () => {
 
   useEffect(() => {
     if (!hasSetInitialLang.current) {
-      const browserLang = (navigator.language || navigator.userLanguage).split("-")[0];
+      let browserLang = (navigator.language || navigator.userLanguage).split("-")[0] || 'en';
+      if (!['fr', 'en'].includes(browserLang)) {
+        browserLang = 'en'
+      }
       i18n.changeLanguage(browserLang);
       hasSetInitialLang.current = true; // prevent future overrides
     }
