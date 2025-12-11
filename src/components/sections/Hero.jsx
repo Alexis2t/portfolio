@@ -4,11 +4,11 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown } from "react-icons/fa";
 const Hero = () => {
   const { t } = useTranslation();
 
-  const scrollToProjects = () => {
-    const element = document.getElementById('projects');
+  const scrollTo = (section) => {
+    const element = document.getElementById(section);
     if (element) {
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - 45;
+      const offsetPosition = elementPosition + window.pageYOffset - 40;
 
       window.scrollTo({
         top: offsetPosition,
@@ -55,7 +55,7 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-6 mb-10 animate-fade-in-up animation-delay-1000">
             <button
-              onClick={scrollToProjects}
+              onClick={() => scrollTo('projects')}
               className="group relative px-8 py-4 bg-linear-to-r from-gray-700 to-gray-800 text-white font-bold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
             >
               <span className="relative z-10 flex items-center gap-2">
@@ -65,15 +65,15 @@ const Hero = () => {
               <div className="absolute inset-0 bg-linear-to-r from-gray-600 to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
 
-            <a
-              href="#contact"
+            <button
+              onClick={() => scrollTo('contact')}
               className="group px-8 py-4 bg-white/10 backdrop-blur-md text-white font-bold rounded-full border-2 border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105"
             >
               <span className="flex items-center gap-2">
                 {t('hero.cta.contact')}
                 <FaEnvelope className="group-hover:rotate-12 transition-transform" />
               </span>
-            </a>
+            </button>
           </div>
 
           {/* Social links */}

@@ -53,7 +53,7 @@ const Header = () => {
     e.preventDefault();
     const element = document.querySelector(href);
     if (element) {
-      const offset = 45; // Ajustez cette valeur selon la hauteur de votre navbar
+      const offset = 40;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -82,11 +82,11 @@ const Header = () => {
             onClick={(e) => scrollToSection(e, "#home")}
             className="text-2xl font-bold bg-linear-to-r from-gray-200 via-white to-gray-300 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
           >
-            <div class="w-20">
+            <div className="w-20">
               <img
                 src="initiales.png"
                 alt=""
-                class="block w-22 h-auto"
+                className="block w-22 h-auto"
               />
             </div>
           </a>
