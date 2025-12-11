@@ -12,7 +12,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -82,7 +82,13 @@ const Header = () => {
             onClick={(e) => scrollToSection(e, "#home")}
             className="text-2xl font-bold bg-linear-to-r from-gray-200 via-white to-gray-300 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
           >
-            Portfolio
+            <div class="w-20">
+              <img
+                src="initiales.png"
+                alt=""
+                class="block w-22 h-auto"
+              />
+            </div>
           </a>
 
           {/* Desktop Menu */}

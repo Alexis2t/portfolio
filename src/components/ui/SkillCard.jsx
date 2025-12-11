@@ -11,15 +11,6 @@ const SkillCard = ({ skill, index }) => {
     ?.map(p => projectsData.find(proj => proj.id === p.id))
     .filter(project => project && project.title) || [];
 
-  // Déterminer le niveau basé sur le nombre de projets
-  // const getLevel = () => {
-  //   const count = relatedProjects.length;
-  //   if (count >= 3) return "expert";
-  //   if (count === 2) return "advanced";
-  //   if (count === 1) return "intermediate";
-  //   return "beginner";
-  // };
-
   const level = getSkillLevel(relatedProjects);
 
   const levelColors = {

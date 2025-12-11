@@ -23,6 +23,8 @@
   --animate-scroll: scroll 2s ease-in-out infinite;
   --animate-fade-in-down: fade-in-down 0.8s ease-out forwards;
   --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+
+  --breakpoint-xs: 475px;
 }
 
 /* Keyframes */
