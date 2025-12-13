@@ -76,7 +76,7 @@ export const skillsData = {
   ],
   backend: [
     {
-      name: "Rails",
+      name: "Ruby on Rails",
       icon: SiRubyonrails,
       iconColor: "#CC0000",
       projects: [

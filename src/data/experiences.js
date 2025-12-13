@@ -11,15 +11,15 @@ export const experiencesData = [
       en: "2024 - now",
     },
     description: {
-      fr: "J’ai conçu et développé Pawn Arena, une plateforme complète pour la gestion de tournois d’échecs en présentiel. Le projet m’a permis de travailler sur l’ensemble de la stack, du backend Rails à l’interface utilisateur en Vue.js, en passant par l’optimisation de requêtes SQL et la gestion granulaire des droits utilisateurs. J’ai également intégré des modules complexes pour le suivi des parties, la gestion des fédérations et l’organisation automatique des rondes selon le système Suisse. Ce projet m’a permis de renforcer mes compétences en développement web full-stack, en UX/UI et en gestion de projet technique sur le long terme.",
-      en: "I designed and developed Pawn Arena, a full-featured platform for managing over-the-board chess tournaments. The project gave me the opportunity to work across the entire stack, from the Rails backend to the Vue.js frontend, including advanced SQL query optimization and granular user access management. I also integrated complex modules for match tracking, federation data management, and automatic pairing of rounds according to the Swiss system. This project helped me strengthen my full-stack web development, UX/UI design, and long-term technical project management skills.",
+      fr: "J’ai conçu et développé Pawn Arena, une plateforme complète pour la gestion de tournois d’échecs en présentiel.\nLe projet m’a permis de travailler sur l’ensemble de la stack, du backend Rails à l’interface utilisateur en Vue.js, en passant par l’optimisation de requêtes SQL et la gestion granulaire des droits utilisateurs.\n   J’ai également intégré des modules complexes pour le suivi des parties, la gestion des fédérations et l’organisation automatique des rondes selon le système Suisse.\nCe projet m’a permis de renforcer mes compétences en développement web full-stack, en UX/UI et en gestion de projet technique sur le long terme.",
+      en: "I designed and developed Pawn Arena, a full-featured platform for managing over-the-board chess tournaments.\nThe project gave me the opportunity to work across the entire stack, from the Rails backend to the Vue.js frontend, including advanced SQL query optimization and granular user access management.\nI also integrated complex modules for match tracking, federation data management, and automatic pairing of rounds according to the Swiss system.\nThis project helped me strengthen my full-stack web development, UX/UI design, and long-term technical project management skills.",
     },
     tasks: {
-      fr: ["Conception du design UX/UI", "Développement backend et bdd", "Création du frontend", "Optimisation des performances SQL", "Gestion asynchrone des tâches lourdes", "Adaptation au systèmes de donnéees externes", "Optimisation du websocket pour 1000 joueurs avec des performances limitées"],
+      fr: ["Conception du design UX/UI", "Développement backend et base de données", "Création du frontend", "Optimisation des performances SQL", "Gestion asynchrone des tâches lourdes", "Adaptation au systèmes de donnéees externes", "Optimisation du websocket pour 1000 joueurs avec des performances limitées"],
       en: [],
     },
     technologies: [
-      "Rails",
+      "Ruby on Rails",
       "Postgresql",
       "Vuejs",
       "Vite",
