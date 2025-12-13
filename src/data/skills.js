@@ -17,6 +17,8 @@ import {
   SiPostgresql,
   SiMongodb,
   SiRedis,
+  SiLinux,
+  SiStimulus,
 } from "react-icons/si";
 import { MdAutorenew } from "react-icons/md";
 
@@ -74,6 +76,14 @@ export const skillsData = {
         { id: 3 },
       ]
     },
+    {
+      name: "Stimulus",
+      icon: SiStimulus,
+      iconColor: "#77E8B9",
+      projects: [
+        { id: 2 },
+      ]
+    },
   ],
   backend: [
     {
@@ -121,14 +131,6 @@ export const skillsData = {
     //     { id: 4 }
     //   ]
     // },
-    {
-      name: "Python",
-      icon: FaPython,
-      iconColor: "#3776AB",
-      projects: [
-        { id: 1 }
-      ]
-    },
   ],
   tools: [
     {
@@ -166,7 +168,25 @@ export const skillsData = {
       projects: [
         { id: 2 }
       ]
-    }
+    },
+    {
+      name: "Linux",
+      icon: SiLinux,
+      iconColor: "#FCC624",
+      projects: [
+        { id: 1 },
+        { id: 2 },
+        { id: 3 },
+      ]
+    },
+    {
+      name: "Python",
+      icon: FaPython,
+      iconColor: "#3776AB",
+      projects: [
+        { id: 1 }
+      ]
+    },
   ],
 };
 
