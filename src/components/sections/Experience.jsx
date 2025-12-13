@@ -61,7 +61,7 @@ const Experience = () => {
                     )}
 
                     {/* Description */}
-                    <p className="text-sm text-gray-300 leading-relaxed mb-3 whitespace-pre-line">
+                    <p className="text-sm text-gray-300 leading-relaxed mb-3 whitespace-pre-line text-justify">
                       {item.description[currentLang]}
                     </p>
 

@@ -179,7 +179,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
           {/* Goal - Featured projects only */}
           {project.goal[currentLang] && (
-            <div className="bg-white/5 border border-white/10 rounded-xl p-5">
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 whitespace-pre-line text-justify">
               <div className="flex items-start gap-3">
                 <div className="shrink-0 size-10 flex items-center justify-center bg-linear-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
                   <FaLightbulb className="text-xl text-blue-400" />
@@ -198,7 +198,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
           {/* Process - Featured projects only */}
           {project.process?.[currentLang] && (
-            <div className="bg-white/5 border border-white/10 rounded-xl p-5">
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 whitespace-pre-line text-justify">
               <div className="flex items-start gap-3">
                 <div className="shrink-0 size-10 flex items-center justify-center bg-linear-to-br from-green-500/20 to-teal-500/20 rounded-lg">
                   <FaCog className="text-xl text-green-400" />

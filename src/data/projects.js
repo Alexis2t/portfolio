@@ -7,20 +7,21 @@ export const projectsData = [
       en: "Chess tournaments management platform",
     },
     description: {
-      fr: "Une plateforme moderne optimisée pour la gestion de tournois d’échecs en présentiel, incluant l’organisation complète de tournois de type Suisse.",
-      en: "A modern platform optimized for managing over-the-board chess tournaments, including full support for Swiss-system events.",
-    },
-    skills: {
-      fr: ["Analyse et prise en compte des besoins utilisateurs", "Gestion asynchrone de tâches lourdes", "Optimisation avancée des requêtes SQL", "Gestion granulaire des droits utilisateurs", "Développement de compétences en UX/UI"],
-      en: ["User needs analysis and requirement gathering", "Asynchronous handling of heavy background tasks", "Advanced SQL query optimization", "Granular user access and permission management", "Developing UX/UI skills"]
+      fr: "Une plateforme dynamique optimisée pour la gestion de tournois d’échecs en présentiel, incluant l’organisation complète de tournois de type Suisse.",
+      en: "A dynamic platform optimized for managing over-the-board chess tournaments, including full support for Swiss-system events.",
     },
     goal: {
       fr: "Créer une solution innovante et fiable pour la gestion des tournois d’échecs, destinée à remplacer des outils existants devenus obsolètes.",
       en: "To build an innovative and reliable solution for managing chess tournaments, designed to replace outdated existing tools.",
     },
     process: {
-      fr: "Le projet a débuté comme un exercice personnel et a progressivement gagné en ambition. J’ai développé l’ensemble de la plateforme en m’appuyant sur les besoins de l’initiateur du projet. Après les fonctionnalités essentielles, le développement s’est étendu à l’intégration des données de différentes fédérations et à l’ajout de modules de plus en plus complexes, optimisés et interconnectés.",
-      en: "The project started as a personal training exercise and gradually grew in scope. I developed the entire platform based on the needs of the project’s initiator. After implementing the core features, the work expanded to integrating data from multiple chess federations and adding increasingly complex, optimized, and interconnected modules.",
+      fr: "Le projet a débuté comme un exercice personnel et a progressivement gagné en ambition. J’ai développé l’ensemble de la plateforme en m’appuyant sur les besoins de l’initiateur du projet. Après les fonctionnalités essentielles, le développement s’est étendu à l’intégration des données de différentes fédérations et à l’ajout de modules de plus en plus complexes et optimisés.",
+      en: "The project started as a personal training exercise and gradually grew in scope. I developed the entire platform based on the needs of the project’s initiator. After implementing the core features, the work expanded to integrating data from multiple chess federations and adding increasingly complex and optimized modules.",
+    },
+    technologies: ["Ruby on Rails", "Vue.js", "Postgresql", "Fly.io", "Docker"],
+    skills: {
+      fr: ["Analyse et prise en compte des besoins utilisateurs", "Gestion asynchrone de tâches lourdes", "Optimisation avancée des requêtes SQL", "Gestion granulaire des droits utilisateurs", "Développement de compétences en UX/UI"],
+      en: ["User needs analysis and requirement gathering", "Asynchronous handling of heavy background tasks", "Advanced SQL query optimization", "Granular user access and permission management", "Developing UX/UI skills"]
     },
     duration: {
       fr: "18 mois",
@@ -29,7 +30,6 @@ export const projectsData = [
     image: "./pawnarena-logo.jpeg",
     images: ["./pawnarena-referees.jpeg", "./pawnarena-info-tournoi.jpeg", "./pawnarena-new-player.jpeg", "./pawnarena-round.jpeg", "./pawnarena-select-result.jpeg"],
     isFeatured: true,
-    technologies: ["Rails", "Vue.js", "Postgresql", "Fly.io", "Docker"],
     link: "https://pawnarena.com",
     size: "large"
   },
@@ -41,21 +41,22 @@ export const projectsData = [
       en: "Urban tresure hunting",
     },
     description: {
-      fr: "Une application de jeu de piste urbain proposant divers scénarios adaptés à chaque ville. Les joueurs peuvent participer seuls ou en équipe sur une même partie.",
-      en: "An urban scavenger-hunt app offering various city-specific scenarios. Players can take part alone or join others in the same game.",
-    },
-    skills: {
-      fr: ["Travail en équipe", "Définition des besoins d’un projet", "Synchronization d'interface en temps réel"],
-      en: ["Teamwork", "Project requirements definition", "Real-time interface synchronization"],
+      fr: "Une application dynamique de jeu de piste urbain proposant divers scénarios adaptés à chaque ville. Les joueurs peuvent participer seuls ou en équipe sur une même partie.",
+      en: "A dynamic urban scavenger-hunt app offering various city-specific scenarios. Players can take part alone or join others in the same game.",
     },
     goal: {
       fr: "Permettre aux gens de découvrir une nouvelle ville et des lieux uniques de façon ludique.",
       en: "Enable people to explore a new city and unique places in a fun and engaging way.",
     },
     process: {
-      fr: "Développement du projet sur deux semaines en équipe de quatre personnes lors du projet de fin de formation. Définition des objectifs, des fonctionnalités essentielles et optionnelles, conception du design et de l’interface via Figma, création de la base de données puis répartition des tâches. Présentation publique du projet en fin de formation. J’ai ensuite poursuivi le projet sur une courte période à titre d’entraînement, en ajoutant une interface d’édition des scénarios.",
-      en: "Two-week project developed by a team of four during the end-of-training capstone. We defined the project goals, core and optional features, designed the UI/UX with Figma, created the database, and distributed tasks across the team. The project was presented publicly at the end of the program. I then continued working on the project for a short period as additional practice, adding a scenario-editing interface.",
+      fr: "Développement du projet sur deux semaines en équipe de quatre personnes lors du projet de fin de formation. Définition des objectifs, des fonctionnalités essentielles et optionnelles, conception du design et de l’interface via Figma, création de la base de données puis répartition des tâches. Présentation publique du projet en fin de formation.\nJ’ai ensuite poursuivi le projet sur une courte période à titre d’entraînement, en ajoutant une interface d’édition des scénarios.",
+      en: "Two-week project developed by a team of four during the end-of-training capstone. We defined the project goals, core and optional features, designed the UI/UX with Figma, created the database, and distributed tasks across the team. The project was presented publicly at the end of the program.\nI then continued working on the project for a short period as additional practice, adding a scenario-editing interface.",
     },
+    skills: {
+      fr: ["Travail en équipe", "Définition des besoins d’un projet", "Conception de plateformes dynamiques"],
+      en: ["Teamwork", "Project requirements definition", "Dynamics platforms conception"],
+    },
+    technologies: ["Ruby on Rails", "Nuxtjs", "Postgresql", "Docker", "Mapbox"],
     duration: {
       fr: "1 mois",
       en: "1 months",
@@ -63,7 +64,6 @@ export const projectsData = [
     image: "cityhunters-home.jpeg",
     images: ["cityhunters-lobby.jpeg", "cityhunters-riddle.jpeg", "cityhunters-show-story.jpeg", "cityhunters-stats.jpeg"],
     isFeatured: false,
-    technologies: ["Rails", "Nuxtjs", "Postgresql", "Docker", "Mapbox"],
     link: "",
     size: "small"
   },
@@ -78,18 +78,19 @@ export const projectsData = [
       fr: "Cette plateforme React génère des ambiances sonores immersives grâce à une banque de musique et aux effets sonores de l'API Freesound.",
       en: "This React-powered platform creates immersive soundscapes using a music library and sound effects from the Freesound API",
     },
-    skills: {
-      fr: [],
-      en: [],
-    },
     goal: {
-      fr: "En tant que régisseur son pour le théâtre d'improvisation, je recherche une interface intuitive et réactive pour créer rapidement des ambiances sonores variées. Une banque de sons conséquente est essentielle pour m'adapter aux situations imprévues. À l'avenir, je prévois d'intégrer des banques de sons locales, d'améliorer l'interface et d'optimiser la recherche de sons via l'API",
-      en: "As a sound engineer for improv theater, I need an intuitive and responsive interface to quickly create diverse soundscapes. A comprehensive sound library is crucial to adapt to unexpected situations. In the future, I plan to integrate local sound banks, enhance the interface, and optimize sound search through the API",
+      fr: "En tant que régisseur son pour le théâtre d'improvisation, je recherche une interface intuitive et réactive pour créer rapidement des ambiances sonores variées.\nUne banque de sons conséquente est essentielle pour m'adapter aux situations imprévues.\nÀ l'avenir, je prévois d'intégrer des banques de sons locales, d'améliorer l'interface et d'optimiser la recherche de sons via l'API",
+      en: "As a sound engineer for improv theater, I need an intuitive and responsive interface to quickly create diverse soundscapes.\nA comprehensive sound library is crucial to adapt to unexpected situations.\nIn the future, I plan to integrate local sound banks, enhance the interface, and optimize sound search through the API",
     },
     process: {
       fr: "",
       en: "",
     },
+    skills: {
+      fr: [],
+      en: [],
+    },
+    technologies: ["Nodejs", "React", "Docker", "Vite"],
     duration: {
       fr: "1 semaine",
       en: "1 week",
@@ -97,7 +98,6 @@ export const projectsData = [
     image: "showsfx-logo.jpeg",
     images: ["showsfx-playlist.jpeg", 'showsfx-search.jpeg', 'showsfx-tracks.jpeg'],
     isFeatured: false,
-    technologies: ["Nodejs", "React", "Docker", "Vite"],
     link: "https://showsfx.fly.dev",
     size: "small"
   },

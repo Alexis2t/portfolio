@@ -36,7 +36,7 @@ const Hero = () => {
           </h2>
 
           {/* Main title with gradient */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 animate-fade-in-down animation-delay-400">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 animate-fade-in-down animation-delay-400">
             <span className="bg-clip-text text-transparent bg-linear-to-r from-gray-200 via-gray-100 to-gray-300 animate-gradient">
               {t('hero.name')}
             </span>
@@ -53,7 +53,7 @@ const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-6 mb-10 animate-fade-in-up animation-delay-1000">
+          <div className="flex flex-wrap items-center justify-center gap-6 mb-16 animate-fade-in-up animation-delay-1000">
             <button
               onClick={() => scrollTo('projects')}
               className="group relative px-8 py-4 bg-linear-to-r from-gray-700 to-gray-800 text-white font-bold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
