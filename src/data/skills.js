@@ -15,7 +15,8 @@ import {
   SiExpress,
   SiVite,
   SiPostgresql,
-  SiMongodb
+  SiMongodb,
+  SiRedis,
 } from "react-icons/si";
 import { MdAutorenew } from "react-icons/md";
 
@@ -93,6 +94,15 @@ export const skillsData = {
         { id: 1 },
         { id: 2 },
         { id: 3 },
+      ]
+    },
+    {
+      name: "Redis",
+      icon: SiRedis,
+      iconColor: "#DC382D",
+      projects: [
+        { id: 1 },
+        { id: 2 },
       ]
     },
     {
