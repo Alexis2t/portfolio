@@ -198,11 +198,6 @@ h1, h2, h3, h4, h5, h6 {
   ring-offset-color: light-dark(white, var(--color-dark-bg));
 }
 
-/* Transitions globales pour le mode sombre */
-* {
-  transition: color 200ms, background-color 200ms, border-color 200ms;
-}
-
 /* Empêcher le scroll lors de l'ouverture de la modal */
 body.modal-open {
   overflow: hidden;

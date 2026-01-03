@@ -69,7 +69,7 @@ const Education = () => {
                     {item.achievements && item.achievements.length > 0 && (
                       <div className="mt-3 pt-3 border-t border-white/10">
                         <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
-                          {currentLang === 'fr' ? 'Réalisations' : 'Achievements'}
+                          { t('educations.achievements') }
                         </h4>
                         <ul className="space-y-1">
                           {(item.achievements[currentLang]).map((achievement, achIndex) => (

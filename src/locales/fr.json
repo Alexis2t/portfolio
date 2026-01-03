@@ -14,7 +14,7 @@
     "available": "Disponible pour de nouveaux projets",
     "name": "Alexis De Temmerman",
     "role": "Développeur Full Stack",
-    "description": "Spécialisé en Ruby on Rails, Vue.js, React.js et technologies modernes.",
+    "description": "Spécialisé en Ruby on Rails, Vue.js et technologies modernes.",
     "cta": {
       "projects": "Voir mes projets",
       "contact": "Me contacter"
@@ -23,7 +23,8 @@
   "education": {
     "title": "Formations",
     "subtitle": "Mon parcours académique",
-    "continousLearning": "🎓 Formation continue et veille technologique"
+    "continousLearning": "🎓 Formation continue et veille technologique",
+    "achievements": "Réalisations"
   },
   "skills": {
     "title": "Compétences",
@@ -36,7 +37,8 @@
     "mediumProject": "Projet moyen (3-9 mois)",
     "smallProject": "Petit projet (-3 mois)",
     "usedIn": "Utilisé dans",
-    "bottomDecoration": "💡 Cliquez sur une compétence pour voir tous les détails"
+    "bottomDecoration": "💡 Cliquez sur une compétence pour voir tous les détails",
+    "experience": "Mise en oeuvre"
   },
   "experience": {
     "title": "Expériences Professionnelles",
@@ -47,7 +49,7 @@
   },
   "projects": {
     "title": "Mes Projets",
-    "subtitle": "Découvrez mes réalisations",
+    "subtitle": "Découvrez mes réalisations et projets personnels",
     "featured": "Projet Principal",
     "viewDetails": "Voir détails",
     "modal": {
@@ -59,7 +61,20 @@
       "close": "Fermer"
     },
     "imagesGallery": "Galerie d'images",
-    "bottomDecoration": "💡 Cliquez sur un projet pour voir tous les détails"
+    "bottomDecoration": "💡 Cliquez sur un projet pour voir tous les détails",
+    "completedProjects": "Projets Réalisés",
+    "mainProject": "Projet Principal",
+    "clickSeeDetails": "Cliquez pour voir les détails →",
+    "otherProjects": "Autres projets",
+    "seeDetails": "Voir les détails",
+
+    "imageGallery": "Galerie d'images",
+    "goal": "Objectif du projet",
+    "creationProcess": "Processus de création",
+    "technologiesUsed": "Technologies utilisées",
+    "skillsDeveloped": "Compétences développées",
+    "viewProject": "Voir le projet",
+    "projectOffline": "Projet hors ligne"
   },
   "contact": {
     "title": "Contactez-moi",

@@ -1,13 +1,10 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaCode, FaServer, FaTools, FaNetworkWired } from "react-icons/fa";
 import SkillCard from "../ui/SkillCard";
-import SkillModal from "../ui/SkillModal";
 import { skillsData } from "../../data/skills";
 
-const Skills = () => {
+const Skills = ({ openSkillModal }) => {
   const { t } = useTranslation();
-  const [selectedSkill, setSelectedSkill] = useState(null);
 
   const categories = [
     {
@@ -115,7 +112,7 @@ const Skills = () => {
                         key={index}
                         skill={skill}
                         index={index}
-                        onClick={setSelectedSkill}
+                        openSkillModal={openSkillModal}
                       />
                     ))}
                   </div>
@@ -132,13 +129,6 @@ const Skills = () => {
           </div>
         </div>
       </section>
-
-      {/* Modal */}
-      <SkillModal
-        skill={selectedSkill}
-        isOpen={!!selectedSkill}
-        onClose={() => setSelectedSkill(null)}
-      />
     </>
   );
 };

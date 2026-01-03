@@ -7,16 +7,16 @@ export const projectsData = [
       en: "Chess tournaments management platform",
     },
     description: {
-      fr: "Une plateforme dynamique optimisée pour la gestion de tournois d’échecs en présentiel, incluant l’organisation complète de tournois de type Suisse.",
-      en: "A dynamic platform optimized for managing over-the-board chess tournaments, including full support for Swiss-system events.",
+      fr: "\tUne plateforme dynamique optimisée pour la gestion de tournois d’échecs en présentiel, incluant l’organisation complète de tournois de type Suisse.",
+      en: "\tA dynamic platform optimized for managing over-the-board chess tournaments, including full support for Swiss-system events.",
     },
     goal: {
-      fr: "Créer une solution innovante et fiable pour la gestion des tournois d’échecs, destinée à remplacer des outils existants devenus obsolètes.",
-      en: "To build an innovative and reliable solution for managing chess tournaments, designed to replace outdated existing tools.",
+      fr: "\tCréer une solution innovante et fiable pour la gestion des tournois d’échecs, destinée à remplacer des outils existants devenus obsolètes.",
+      en: "\tTo build an innovative and reliable solution for managing chess tournaments, designed to replace outdated existing tools.",
     },
     process: {
-      fr: "Le projet a débuté comme un exercice personnel avant de gagner progressivement en ambition. J’ai conçu et développé l’ensemble de la plateforme en m’appuyant étroitement sur les besoins de l’initiateur du projet.\nAprès la mise en place des fonctionnalités essentielles, le développement s’est étendu à l’intégration de données issues des fédérations française et internationale d’échecs, ainsi qu’à l’ajout de modules de plus en plus complexes et optimisés.\nLe projet a ensuite fait l’objet d’une phase majeure d’optimisation (requêtes SQL, réduction des volumes de données échangées via WebSocket, traitement asynchrone des tâches lourdes et optimisations de calcul côté back-end) afin de supporter des tournois de grande envergure, jusqu’à 1'000 joueurs",
-      en: "The project started as a personal exercise and gradually evolved into a more ambitious platform. I designed and developed the entire application based closely on the needs of the project initiator.\nAfter implementing the core features, development expanded to include the integration of data from the French and international chess federations, along with the addition of increasingly complex and optimized modules.\nThe project then went through a major optimization phase (including SQL query optimization, reduction of data transmitted via WebSockets, asynchronous processing of heavy tasks, and back-end computation optimizations) enabling the platform to handle large-scale tournaments of up to 1,000 players.",
+      fr: "\tLe projet a débuté comme un exercice personnel avant de gagner progressivement en ambition. J’ai conçu et développé l’ensemble de la plateforme en m’appuyant étroitement sur les besoins de l’initiateur du projet.\n\tAprès la mise en place des fonctionnalités essentielles, le développement s’est étendu à l’intégration de données issues des fédérations française et internationale d’échecs, ainsi qu’à l’ajout de modules de plus en plus complexes et optimisés.\n\tLe projet a ensuite fait l’objet d’une phase majeure d’optimisation (requêtes SQL, réduction des volumes de données échangées via WebSocket, traitement asynchrone des tâches lourdes et optimisations de calcul côté back-end) afin de supporter des tournois de grande envergure, jusqu’à 1'000 joueurs",
+      en: "\tThe project started as a personal exercise and gradually evolved into a more ambitious platform. I designed and developed the entire application based closely on the needs of the project initiator.\n\tAfter implementing the core features, development expanded to include the integration of data from the French and international chess federations, along with the addition of increasingly complex and optimized modules.\n\tThe project then went through a major optimization phase (including SQL query optimization, reduction of data transmitted via WebSockets, asynchronous processing of heavy tasks, and back-end computation optimizations) enabling the platform to handle large-scale tournaments of up to 1,000 players.",
     },
     technologies: ["Ruby on Rails", "Vue.js", "Postgresql", "Redis", "Docker", "TailwindCSS", "Sidekiq", "ActionCable"],
     skills: {
@@ -41,16 +41,16 @@ export const projectsData = [
       en: "Urban tresure hunting",
     },
     description: {
-      fr: "Une application dynamique de jeu de piste urbain proposant divers scénarios adaptés à chaque ville. Les joueurs peuvent participer seuls ou en équipe sur une même partie.",
-      en: "A dynamic urban scavenger-hunt app offering various city-specific scenarios. Players can take part alone or join others in the same game.",
+      fr: "\tUne application dynamique de jeu de piste urbain proposant divers scénarios adaptés à chaque ville. Les joueurs peuvent participer seuls ou en équipe sur une même partie.",
+      en: "\tA dynamic urban scavenger-hunt app offering various city-specific scenarios. Players can take part alone or join others in the same game.",
     },
     goal: {
-      fr: "Permettre aux gens de découvrir une nouvelle ville et des lieux uniques de façon ludique.",
-      en: "Enable people to explore a new city and unique places in a fun and engaging way.",
+      fr: "\tPermettre aux gens de découvrir une nouvelle ville et des lieux uniques de façon ludique.",
+      en: "\tEnable people to explore a new city and unique places in a fun and engaging way.",
     },
     process: {
-      fr: "Développement du projet sur deux semaines en équipe de quatre personnes lors du projet de fin de formation. Définition des objectifs, des fonctionnalités essentielles et optionnelles, conception du design et de l’interface via Figma, création de la base de données puis répartition des tâches. Présentation publique du projet en fin de formation.\nJ’ai ensuite poursuivi le projet sur une courte période à titre d’entraînement, en ajoutant une interface d’édition des scénarios.",
-      en: "Two-week project developed by a team of four during the end-of-training capstone. We defined the project goals, core and optional features, designed the UI/UX with Figma, created the database, and distributed tasks across the team. The project was presented publicly at the end of the program.\nI then continued working on the project for a short period as additional practice, adding a scenario-editing interface.",
+      fr: "\tDéveloppement du projet sur deux semaines en équipe de quatre personnes lors du projet de fin de formation. Définition des objectifs, des fonctionnalités essentielles et optionnelles, conception du design et de l’interface via Figma, création de la base de données puis répartition des tâches. Présentation publique du projet en fin de formation.\n\tJ’ai ensuite poursuivi le projet sur une courte période à titre d’entraînement, en ajoutant une interface d’édition des scénarios.",
+      en: "\tTwo-week project developed by a team of four during the end-of-training capstone. We defined the project goals, core and optional features, designed the UI/UX with Figma, created the database, and distributed tasks across the team. The project was presented publicly at the end of the program.\n\tI then continued working on the project for a short period as additional practice, adding a scenario-editing interface.",
     },
     skills: {
       fr: ["Travail en équipe", "Définition des besoins d’un projet", "Conception de plateformes dynamiques"],
@@ -75,12 +75,12 @@ export const projectsData = [
       en: "Soundstage ambiance creation and playback",
     },
     description: {
-      fr: "Cette plateforme React génère des ambiances sonores immersives grâce à une banque de musique et aux effets sonores de l'API Freesound.",
-      en: "This React-powered platform creates immersive soundscapes using a music library and sound effects from the Freesound API",
+      fr: "\tCette plateforme React génère des ambiances sonores immersives grâce à une banque de musique et aux effets sonores de l'API Freesound.",
+      en: "\tThis React-powered platform creates immersive soundscapes using a music library and sound effects from the Freesound API",
     },
     goal: {
-      fr: "En tant que régisseur son pour le théâtre d'improvisation, je recherche une interface intuitive et réactive pour créer rapidement des ambiances sonores variées.\nUne banque de sons conséquente est essentielle pour m'adapter aux situations imprévues.\nÀ l'avenir, je prévois d'intégrer des banques de sons locales, d'améliorer l'interface et d'optimiser la recherche de sons via l'API",
-      en: "As a sound engineer for improv theater, I need an intuitive and responsive interface to quickly create diverse soundscapes.\nA comprehensive sound library is crucial to adapt to unexpected situations.\nIn the future, I plan to integrate local sound banks, enhance the interface, and optimize sound search through the API",
+      fr: "\tEn tant que régisseur son pour le théâtre d'improvisation, je recherche une interface intuitive et réactive pour créer rapidement des ambiances sonores variées.\n\tUne banque de sons conséquente est essentielle pour m'adapter aux situations imprévues.\n\tÀ l'avenir, je prévois d'intégrer des banques de sons locales, d'améliorer l'interface et d'optimiser la recherche de sons via l'API",
+      en: "\tAs a sound engineer for improv theater, I need an intuitive and responsive interface to quickly create diverse soundscapes.\n\tA comprehensive sound library is crucial to adapt to unexpected situations.\n\tIn the future, I plan to integrate local sound banks, enhance the interface, and optimize sound search through the API",
     },
     process: {
       fr: "",

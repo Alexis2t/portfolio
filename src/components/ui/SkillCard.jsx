@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { projectsData } from "../../data/projects";
 import { levelLabels, getSkillLevel } from "../../data/skills";
 
-const SkillCard = ({ skill, index, onClick }) => {
+const SkillCard = ({ skill, index, openSkillModal }) => {
   const { i18n, t } = useTranslation();
   const currentLang = i18n.language;
 
@@ -33,7 +33,7 @@ const SkillCard = ({ skill, index, onClick }) => {
     <div
       className={`group relative p-3 rounded-xl border backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:-translate-y-1 border-gray-500/80 bg-gray-500/10 animate-fade-in-up ${hasContent ? 'cursor-pointer' : ''}`}
       style={{ animationDelay: `${index * 0.03}s` }}
-      onClick={() => hasContent && onClick && onClick(skill)}
+      onClick={() => hasContent && openSkillModal(skill)}
     >
       {/* Icon avec couleur personnalisée */}
       <div className="flex flex-col items-center gap-2">

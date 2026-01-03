@@ -29,7 +29,8 @@ export const skillsData = {
       iconColor: "#42B883",
       type: 'config',
       projects: [
-        { id: 'pawnarena' }
+        { id: 'pawnarena' },
+        { id: 'city-hunters' },
       ],
       tools: ['Pinia', 'Vuex', 'Composition API', 'Axios'],
       achievements: {
@@ -143,7 +144,6 @@ export const skillsData = {
       level: 'intermediate',
       projects: [
         { id: 'pawnarena' },
-        { id: "city-hunters" },
         { id: 'showsfx' },
       ],
       achievements: {
@@ -286,6 +286,7 @@ export const skillsData = {
       level: 'intermediate',
       projects: [
         { id: 'pawnarena' },
+        { id: 'city-hunters' },
         { id: 'showsfx' },
       ],
       tools: ['Docker Compose'],
@@ -335,6 +336,7 @@ export const skillsData = {
       projects: [
         { id: 'pawnarena' },
         { id: 'city-hunters' },
+        { id: 'showsfx' },
       ],
       achievements: {
         fr: [

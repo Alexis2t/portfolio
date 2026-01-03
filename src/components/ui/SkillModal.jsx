@@ -3,7 +3,7 @@ import { FaTimes, FaCheckCircle } from "react-icons/fa";
 import { projectsData } from "../../data/projects";
 
 const SkillModal = ({ skill, isOpen, onClose }) => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const currentLang = i18n.language;
 
   if (!isOpen || !skill) return null;
@@ -92,11 +92,13 @@ const SkillModal = ({ skill, isOpen, onClose }) => {
                 )}
               </div>
             </div>
+
             <button
               onClick={onClose}
-              className="size-10 flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 transition-colors text-gray-400 hover:text-white"
+              className="absolute top-4 right-4 z-10 size-10 flex items-center justify-center bg-gray-800/80 hover:bg-gray-700 border border-white/20 rounded-full text-white transition-all duration-300 hover:scale-110 hover:rotate-90 hover:cursor-pointer"
+              aria-label="Close modal"
             >
-              <FaTimes className="text-xl" />
+              <FaTimes />
             </button>
           </div>
         </div>
@@ -108,7 +110,7 @@ const SkillModal = ({ skill, isOpen, onClose }) => {
             <div>
               <h4 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
                 <span className="size-2 rounded-full bg-blue-500"></span>
-                Projets utilisés
+                { t('skills.usedIn') }
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {relatedProjects.map(project => (
@@ -146,7 +148,7 @@ const SkillModal = ({ skill, isOpen, onClose }) => {
             <div>
               <h4 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
                 <span className="size-2 rounded-full bg-green-500"></span>
-                Réalisations
+                { t('skills.experience') }
               </h4>
               <div className="space-y-3">
                 {achievements.map((achievement, index) => renderAchievement(achievement, index))}

@@ -1,24 +1,10 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaStar, FaClock } from "react-icons/fa";
 import { projectsData } from "../../data/projects";
-import ProjectModal from "../ui/ProjectModal";
 
-const Projects = () => {
+const Projects = ({ openProjectModal }) => {
   const { i18n, t } = useTranslation();
   const currentLang = i18n.language;
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleProjectClick = (project) => {
-    setSelectedProject(project);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setTimeout(() => setSelectedProject(null), 300);
-  };
 
   // Séparer le projet featured des autres
   const featuredProject = projectsData.find(p => p.isFeatured);
@@ -32,20 +18,17 @@ const Projects = () => {
           {/* Header */}
           <div className="text-center mb-6">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-              {currentLang === 'fr' ? 'Projets Réalisés' : 'Completed Projects'}
+              { t('projects.completedProjects') }
             </h2>
             <p className="text-gray-300 text-sm">
-              {currentLang === 'fr'
-                ? 'Découvrez mes réalisations et projets personnels'
-                : 'Discover my achievements and personal projects'}
+              {t('projects.subtitle')}
             </p>
           </div>
 
           {/* Featured Project - Full width */}
           {featuredProject && (
             <div className="mb-6">
-              <div
-                onClick={() => handleProjectClick(featuredProject)}
+              <div onClick={() => openProjectModal(featuredProject)}
                 className="group bg-white/5 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden hover:bg-white/10 hover:border-white/30 transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl cursor-pointer"
               >
                 {/* Image */}
@@ -60,7 +43,7 @@ const Projects = () => {
                   {/* Featured badge */}
                   <div className="absolute top-4 right-4 flex items-center gap-1 px-3 py-1.5 bg-yellow-500/20 border border-yellow-500/50 rounded-full text-xs font-medium text-yellow-300 backdrop-blur-sm">
                     <FaStar className="text-xs" />
-                    <span>{currentLang === 'fr' ? 'Projet Principal' : 'Main Project'}</span>
+                    <span>{ t('projects.mainProject')}</span>
                   </div>
 
                   {/* Duration badge */}
@@ -110,7 +93,7 @@ const Projects = () => {
                   {/* CTA */}
                   <div className="mt-4 pt-4 border-t border-white/10">
                     <p className="text-sm text-green-400 font-medium group-hover:text-green-300 transition-colors">
-                      {currentLang === 'fr' ? 'Cliquez pour voir les détails →' : 'Click to see details →'}
+                      { t('projects.clickSeeDetails') }
                     </p>
                   </div>
                 </div>
@@ -122,13 +105,13 @@ const Projects = () => {
           {otherProjects.length > 0 && (
             <div>
               <h3 className="text-xl font-bold text-white mb-4 px-2">
-                {currentLang === 'fr' ? 'Autres Projets' : 'Other Projects'}
+                { t('projects.otherProjects') }
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {otherProjects.map((project) => (
                   <div
                     key={project.id}
-                    onClick={() => handleProjectClick(project)}
+                    onClick={() => openProjectModal(project)}
                     className="group bg-white/5 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden hover:bg-white/10 hover:border-white/30 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl cursor-pointer"
                   >
                     {/* Image */}
@@ -174,7 +157,7 @@ const Projects = () => {
                       {/* CTA */}
                       <div className="mt-3 pt-3 border-t border-white/10">
                         <p className="text-xs text-green-400 font-medium group-hover:text-green-300 transition-colors">
-                          {currentLang === 'fr' ? 'Voir les détails →' : 'See details →'}
+                          { t('projects.seeDetails') }
                         </p>
                       </div>
                     </div>
@@ -192,13 +175,6 @@ const Projects = () => {
           </div>
         </div>
       </div>
-
-      {/* Modal */}
-      <ProjectModal
-        project={selectedProject}
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-      />
     </section>
   );
 };

@@ -3,12 +3,11 @@ import { useTranslation } from "react-i18next";
 import { FaTimes, FaExternalLinkAlt, FaGithub, FaClock, FaLightbulb, FaCog, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const ProjectModal = ({ project, isOpen, onClose }) => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const currentLang = i18n.language;
 
   // Utiliser project?.id ou project?.name comme clé pour réinitialiser automatiquement
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const projectId = project?.id || project?.name;
 
   // Bloquer le scroll quand la modal est ouverte
   useEffect(() => {
@@ -23,13 +22,6 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
-
-  // Réinitialiser l'index quand la modal s'ouvre ou le projet change
-  useEffect(() => {
-    if (isOpen) {
-      setCurrentImageIndex(0);
-    }
-  }, [isOpen, projectId]);
 
   if (!project) return null;
 
@@ -49,6 +41,14 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
       prev === allImages.length - 1 ? 0 : prev + 1
     );
   };
+
+  const formatText = (text) => {
+    return text.split('\n').map((line, i) => (
+      <span key={i} className={i > 0 ? "block mt-0.75" : "block"}>
+        {line.replace(/\t/g, "\t\t")}
+      </span>
+    ))
+  }
 
   return (
     <div
@@ -150,7 +150,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
           {allImages.length > 1 && (
             <div>
               <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-3">
-                {currentLang === 'fr' ? 'Galerie d\'images' : 'Image Gallery'}
+                { t('project.imageGallery') }
               </h3>
               <div className="grid grid-cols-4 md:grid-cols-6 gap-3">
                 {allImages.map((image, index) => (
@@ -186,10 +186,10 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-bold text-white mb-2">
-                    {currentLang === 'fr' ? 'Objectif du projet' : 'Project Goal'}
+                    {t('project.goal')}
                   </h3>
-                  <p className="text-sm text-gray-300 leading-relaxed">
-                    {project.goal[currentLang]}
+                  <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-wrap">
+                    {formatText(project.goal[currentLang])}
                   </p>
                 </div>
               </div>
@@ -198,17 +198,18 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
           {/* Process - Featured projects only */}
           {project.process?.[currentLang] && (
-            <div className="bg-white/5 border border-white/10 rounded-xl p-5 whitespace-pre-line text-justify">
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 text-justify">
               <div className="flex items-start gap-3">
                 <div className="shrink-0 size-10 flex items-center justify-center bg-linear-to-br from-green-500/20 to-teal-500/20 rounded-lg">
                   <FaCog className="text-xl text-green-400" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-bold text-white mb-2">
-                    {currentLang === 'fr' ? 'Processus de création' : 'Creation Process'}
+                    {t('project.creationProcess')}
                   </h3>
-                  <p className="text-sm text-gray-300 leading-relaxed">
-                    {project.process[currentLang]}
+                  <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-wrap">
+                    {/* {project.process[currentLang]} */}
+                    {formatText(project.process[currentLang])}
                   </p>
                 </div>
               </div>
@@ -219,7 +220,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
           {project.technologies && project.technologies.length > 0 && (
             <div>
               <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-3">
-                {currentLang === 'fr' ? 'Technologies utilisées' : 'Technologies Used'}
+                {t('project.technologiesUsed')}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, index) => (
@@ -239,7 +240,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             <div className="mb-6">
               <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-200 mb-4">
                 <span className="text-green-400">🎯</span>
-                {currentLang === 'fr' ? 'Compétences développées' : 'Skills Developed'}
+                {t('project.skillsDeveloped')}
               </h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {project.skills?.[currentLang].map((skill, index) => (
@@ -272,8 +273,8 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               >
                 {project.link ? <FaExternalLinkAlt /> : <FaTimes />}
                 {project.link
-                  ? (currentLang === 'fr' ? 'Voir le projet' : 'View Project')
-                  : (currentLang === 'fr' ? 'Projet hors ligne' : 'Project Offline')
+                  ? t('project.viewProject')
+                  : t('project.projectOffline')
                 }
               </a>
             )}

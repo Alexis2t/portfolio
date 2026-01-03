@@ -14,7 +14,7 @@
     "available": "Available for new projects",
     "name": "Alexis De Temmerman",
     "role": "Full Stack Developer",
-    "description": "Specialized in Ruby on Rails, Vue.js, React.js and modern technologies.",
+    "description": "Specialized in Ruby on Rails, Vue.js and modern technologies.",
     "cta": {
       "projects": "View my projects",
       "contact": "Contact me"
@@ -23,7 +23,8 @@
   "education": {
     "title": "Education",
     "subtitle": "My academic background",
-    "continousLearning": "🎓 Continuous learning and technology watch"
+    "continousLearning": "🎓 Continuous learning and technology watch",
+    "achievements": "Achievements"
   },
   "skills": {
     "title": "Skills",
@@ -36,7 +37,8 @@
     "mediumProject": "Medium project (3-9 months)",
     "smallProject": "Small project (-3 months)",
     "usedIn": "Used in",
-    "bottomDecoration": "💡 Click on a skill to see all details"
+    "bottomDecoration": "💡 Click on a skill to see all details",
+    "experience": "Experience"
   },
   "experience": {
     "title": "Professional Experience",
@@ -47,7 +49,7 @@
   },
   "projects": {
     "title": "My Projects",
-    "subtitle": "Discover my achievements",
+    "subtitle": "Discover my achievements and personal projects",
     "featured": "Featured Project",
     "viewDetails": "View details",
     "modal": {
@@ -59,7 +61,21 @@
       "close": "Close"
     },
     "imagesGallery": "Images Gallery",
-    "bottomDecoration": "💡 Click on a project to see all details"
+    "bottomDecoration": "💡 Click on a project to see all details",
+    "completedProjects": "Completed Projects",
+    "discoverAchivements": "Discover my achievements and personal projects",
+    "mainProject": "Main Project",
+    "clickSeeDetails": "Click to see details →",
+    "otherProjects": "Other Projects",
+    "seeDetails": "See details",
+
+    "imageGallery": "Image Gallery",
+    "goal": "Project Goal",
+    "creationProcess": "Creation Process",
+    "technologiesUsed": "Technologies Used",
+    "skillsDeveloped": "Skills Developed",
+    "viewProject": "View Project",
+    "projectOffline": "Project Offline"
   },
   "contact": {
     "title": "Contact Me",
