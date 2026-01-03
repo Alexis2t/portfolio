@@ -33,7 +33,7 @@ const SkillModal = ({ skill, isOpen, onClose }) => {
             {achievement.subAchievements.map((sub, subIdx) => (
               <div key={subIdx} className="flex items-start gap-3">
                 <span className="text-blue-400">→</span>
-                <span className="text-gray-300 text-sm mt-0.25">{sub.name}</span>
+                <span className="text-gray-300 text-sm mt-px">{sub.name}</span>
               </div>
             ))}
           </div>

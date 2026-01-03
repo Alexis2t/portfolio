@@ -97,14 +97,6 @@ const Hero = () => {
               <FaLinkedin className="text-2xl text-white group-hover:scale-110 transition-transform" />
               <div className="absolute inset-0 rounded-full bg-linear-to-r from-gray-500 to-gray-600 opacity-0 group-hover:opacity-20 blur-xl transition-opacity"></div>
             </a>
-
-            <a
-              href="mailto:de.temmerman.alexis@gmail.com"
-              className="group relative size-14 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110 hover:-translate-y-1"
-            >
-              <FaEnvelope className="text-2xl text-white group-hover:scale-110 transition-transform" />
-              <div className="absolute inset-0 rounded-full bg-linear-to-r from-gray-500 to-gray-600 opacity-0 group-hover:opacity-20 blur-xl transition-opacity"></div>
-            </a>
           </div>
         </div>
       </div>
