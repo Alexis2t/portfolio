@@ -35,7 +35,8 @@
     "largeProject": "Grand projet (9+ mois)",
     "mediumProject": "Projet moyen (3-9 mois)",
     "smallProject": "Petit projet (-3 mois)",
-    "usedIn": "Utilisé dans"
+    "usedIn": "Utilisé dans",
+    "bottomDecoration": "💡 Cliquez sur une compétence pour voir tous les détails"
   },
   "experience": {
     "title": "Expériences Professionnelles",
@@ -57,7 +58,8 @@
       "visit": "Visiter le site",
       "close": "Fermer"
     },
-    "imagesGallery": "Galerie d'images"
+    "imagesGallery": "Galerie d'images",
+    "bottomDecoration": "💡 Cliquez sur un projet pour voir tous les détails"
   },
   "contact": {
     "title": "Contactez-moi",

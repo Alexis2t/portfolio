@@ -3,7 +3,7 @@ import { projectsData } from "../../data/projects";
 import { levelLabels, getSkillLevel } from "../../data/skills";
 
 const SkillCard = ({ skill, index, onClick }) => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const currentLang = i18n.language;
 
   // Vérifier que skill.projects existe et filtrer les projets valides
@@ -11,13 +11,13 @@ const SkillCard = ({ skill, index, onClick }) => {
     ?.map(p => projectsData.find(proj => proj.id === p.id))
     .filter(project => project && project.title) || [];
 
-  const level = getSkillLevel(relatedProjects);
+  const level = skill.level || getSkillLevel(relatedProjects);
+  const displayLevel = level === 'beginner' ? null : level;
 
   const levelColors = {
     expert: "border-green-500/50 bg-green-500/10 text-green-500",
     advanced: "border-blue-500/50 bg-blue-500/10 text-blue-500",
     intermediate: "border-yellow-500/50 bg-yellow-500/10 text-yellow-500",
-    beginner: "border-gray-500/50 bg-gray-500/10 text-gray-500",
   };
 
   const badgeColors = {
@@ -58,7 +58,7 @@ const SkillCard = ({ skill, index, onClick }) => {
 
       {/* Badge niveau */}
       <div className="mt-2 flex justify-center">
-        <span className={`px-2 py-0.5 rounded-full text-[10px] font-semibold border ${levelColors[level]}`}>
+        <span className={`px-2 py-0.5 rounded-full text-[10px] font-semibold ${displayLevel ? 'border' : ''} ${levelColors[level]}`}>
           {levelLabels[currentLang][level]}
         </span>
       </div>
@@ -88,38 +88,36 @@ const SkillCard = ({ skill, index, onClick }) => {
       )}
 
       {/* Click indicator for skills with content */}
-      {hasContent && (
+      {/* {hasContent && (
         <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
           <div className="size-5 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
             <span className="text-white text-xs">i</span>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Tooltip au survol */}
       {relatedProjects.length > 0 && (
         <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300 z-10">
           <div className="bg-gray-900/95 backdrop-blur-md text-white text-xs rounded-xl shadow-2xl p-3 min-w-[200px] border border-white/10">
             <p className="font-semibold mb-2 border-b border-white/20 pb-1.5">
-              {hasContent ? 'Cliquez pour plus de détails' : 'Projets utilisés :'}
+              { t('skills.usedIn') }
             </p>
-            {!hasContent && (
-              <ul className="space-y-1.5">
-                {relatedProjects.slice(0, 3).map(project => (
-                  <li key={project.id} className="flex items-center gap-1.5">
-                    <span className="text-blue-400 mt-0.5">→</span>
-                    <span className="flex-1 leading-tight text-gray-100">
-                      {project.name}
-                    </span>
-                  </li>
-                ))}
-                {relatedProjects.length > 3 && (
-                  <li className="text-gray-300 italic text-center pt-1 border-t border-white/10">
-                    +{relatedProjects.length - 3} autre{relatedProjects.length > 4 ? 's' : ''}
-                  </li>
-                )}
-              </ul>
-            )}
+            <ul className="space-y-1.5">
+              {relatedProjects.slice(0, 3).map(project => (
+                <li key={project.id} className="flex items-center gap-1.5">
+                  <span className="text-blue-400 mt-0.5">→</span>
+                  <span className="flex-1 leading-tight text-gray-100">
+                    {project.name}
+                  </span>
+                </li>
+              ))}
+              {relatedProjects.length > 3 && (
+                <li className="text-gray-300 italic text-center pt-1 border-t border-white/10">
+                  +{relatedProjects.length - 3} autre{relatedProjects.length > 4 ? 's' : ''}
+                </li>
+              )}
+            </ul>
             {/* Flèche triangle */}
             <div className="absolute left-1/2 -translate-x-1/2 top-full">
               <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white/10"></div>

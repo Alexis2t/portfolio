@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FaCode, FaServer, FaTools } from "react-icons/fa";
+import { FaCode, FaServer, FaTools, FaNetworkWired } from "react-icons/fa";
 import SkillCard from "../ui/SkillCard";
 import SkillModal from "../ui/SkillModal";
 import { skillsData } from "../../data/skills";
@@ -12,24 +12,31 @@ const Skills = () => {
   const categories = [
     {
       id: "frontend",
-      title: { fr: "Frontend", en: "Frontend" },
+      title: { fr: "Frontend & UI", en: "Frontend & UI" },
       icon: FaCode,
       color: "from-pink-500 to-rose-500",
       skills: skillsData.frontend
     },
     {
       id: "backend",
-      title: { fr: "Backend", en: "Backend" },
+      title: { fr: "Backend & APIs", en: "Backend & APIs" },
       icon: FaServer,
       color: "from-blue-500 to-cyan-500",
       skills: skillsData.backend
     },
     {
+      id: "infra",
+      title: { fr: "Infrastructure & DevOps", en: "Infrastructure & DevOps" },
+      icon: FaNetworkWired,
+      color: "from-green-500 to-teal-500",
+      skills: skillsData.infra,
+    },
+    {
       id: "tools",
-      title: { fr: "Outils & DevOps", en: "Tools & DevOps" },
+      title: { fr: "Outils & Productivité", en: "Tools & Productivity" },
       icon: FaTools,
       color: "from-purple-500 to-indigo-500",
-      skills: skillsData.tools
+      skills: skillsData.tools,
     }
   ];
 
@@ -116,11 +123,17 @@ const Skills = () => {
               ))}
             </div>
 
+            {/* Bottom decoration */}
+            <div className="mt-6 pt-4 border-t border-white/10 text-center">
+              <p className="text-gray-400 text-xs">
+                { t('skills.bottomDecoration') }
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Modal - OUTSIDE the section */}
+      {/* Modal */}
       <SkillModal
         skill={selectedSkill}
         isOpen={!!selectedSkill}

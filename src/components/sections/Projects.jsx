@@ -5,7 +5,7 @@ import { projectsData } from "../../data/projects";
 import ProjectModal from "../ui/ProjectModal";
 
 const Projects = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const currentLang = i18n.language;
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -187,9 +187,7 @@ const Projects = () => {
           {/* Bottom decoration */}
           <div className="mt-6 pt-4 border-t border-white/10 text-center">
             <p className="text-gray-400 text-xs">
-              {currentLang === 'fr'
-                ? '💡 Cliquez sur un projet pour voir tous les détails'
-                : '💡 Click on a project to see all details'}
+              { t('projects.bottomDecoration') }
             </p>
           </div>
         </div>
