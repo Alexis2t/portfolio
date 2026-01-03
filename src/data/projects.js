@@ -1,6 +1,6 @@
 export const projectsData = [
   {
-    id: 1,
+    id: 'pawnarena',
     name: "Pawn Arena",
     title: {
       fr: "Plateforme de gestion de tournois d'échecs",
@@ -18,7 +18,7 @@ export const projectsData = [
       fr: "Le projet a débuté comme un exercice personnel avant de gagner progressivement en ambition. J’ai conçu et développé l’ensemble de la plateforme en m’appuyant étroitement sur les besoins de l’initiateur du projet.\nAprès la mise en place des fonctionnalités essentielles, le développement s’est étendu à l’intégration de données issues des fédérations française et internationale d’échecs, ainsi qu’à l’ajout de modules de plus en plus complexes et optimisés.\nLe projet a ensuite fait l’objet d’une phase majeure d’optimisation (requêtes SQL, réduction des volumes de données échangées via WebSocket, traitement asynchrone des tâches lourdes et optimisations de calcul côté back-end) afin de supporter des tournois de grande envergure, jusqu’à 1'000 joueurs",
       en: "The project started as a personal exercise and gradually evolved into a more ambitious platform. I designed and developed the entire application based closely on the needs of the project initiator.\nAfter implementing the core features, development expanded to include the integration of data from the French and international chess federations, along with the addition of increasingly complex and optimized modules.\nThe project then went through a major optimization phase (including SQL query optimization, reduction of data transmitted via WebSockets, asynchronous processing of heavy tasks, and back-end computation optimizations) enabling the platform to handle large-scale tournaments of up to 1,000 players.",
     },
-    technologies: ["Ruby on Rails", "Vue.js", "Postgresql", "Fly.io", "Docker"],
+    technologies: ["Ruby on Rails", "Vue.js", "Postgresql", "Redis", "Docker", "TailwindCSS", "Sidekiq", "ActionCable"],
     skills: {
       fr: ["Analyse et prise en compte des besoins utilisateurs", "Gestion asynchrone de tâches lourdes", "Optimisation avancée des requêtes SQL", "Gestion granulaire des droits utilisateurs", "Conception UX/UI centrée utilisateur, appliquée à des interfaces web dynamiques"],
       en: ["User needs analysis and requirement gathering", "Asynchronous handling of heavy background tasks", "Advanced SQL query optimization", "Granular user access and permission management", "Conception of user centered UX/UI, applied to dynamics web interfaces"]
@@ -34,7 +34,7 @@ export const projectsData = [
     size: "large"
   },
   {
-    id: 2,
+    id: 'city-hunters',
     name: "City Hunters",
     title: {
       fr: "Jeux de piste en ville",
@@ -68,7 +68,7 @@ export const projectsData = [
     size: "small"
   },
   {
-    id: 3,
+    id: 'showsfx',
     name: "ShowSFX",
     title: {
       fr: "Plateforme de création d'ambiance sonore",
