@@ -2,6 +2,7 @@ export const projectsData = [
   {
     id: 'pawnarena',
     name: "Pawn Arena",
+    theme: 'blue-900',
     title: {
       fr: "Plateforme de gestion de tournois d'échecs",
       en: "Chess tournaments management platform",
@@ -36,6 +37,7 @@ export const projectsData = [
   {
     id: 'city-hunters',
     name: "City Hunters",
+    theme: 'sky-900',
     title: {
       fr: "Jeux de piste en ville",
       en: "Urban tresure hunting",
@@ -70,6 +72,7 @@ export const projectsData = [
   {
     id: 'showsfx',
     name: "ShowSFX",
+    theme: 'yellow-900',
     title: {
       fr: "Plateforme de création d'ambiance sonore",
       en: "Soundstage ambiance creation and playback",

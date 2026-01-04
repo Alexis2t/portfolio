@@ -1,15 +1,9 @@
 import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { FaTimes, FaExternalLinkAlt, FaGithub, FaClock, FaLightbulb, FaCog, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const ProjectModal = ({ project, isOpen, onClose }) => {
-  const { i18n, t } = useTranslation();
-  const currentLang = i18n.language;
-
-  // Utiliser project?.id ou project?.name comme clé pour réinitialiser automatiquement
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Bloquer le scroll quand la modal est ouverte
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -17,7 +11,6 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
       document.body.style.overflow = 'unset';
     }
 
-    // Cleanup lors du démontage
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -25,7 +18,6 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
   if (!project) return null;
 
-  // Créer un tableau d'images (image principale + images supplémentaires)
   const allImages = project.images
     ? [project.image, ...project.images]
     : [project.image];
@@ -50,28 +42,94 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
     ))
   }
 
+  // Theme colors with complementary palettes
+  const getThemeColors = () => {
+    const bg = project.theme || 'gray-900';
+
+    // Blue theme (blue-900/50 bg)
+    if (bg.includes('blue-900')) {
+      return {
+        bg: 'bg-blue-900/5',
+        hoverText: 'hover:text-blue-300',
+        text: 'text-blue-400',
+        miniPictures: 'border-blue-400 ring-blue-400/30',
+        primaryBtn: 'from-blue-500/20 to-blue-600/20 border-blue-500/30',
+        secondaryBtn: 'from-slate-500/20 to-slate-600/20 border-slate-500/30',
+        skillIcon: 'text-blue-400',
+        goalBg: 'from-blue-500/20 to-indigo-500/20',
+        goalIcon: 'text-blue-400',
+        processBg: 'from-blue-500/20 to-cyan-500/20',
+        processIcon: 'text-blue-400'
+      };
+    }
+
+    // Sky theme (sky-800/10 bg)
+    if (bg.includes('sky-900')) {
+      return {
+        bg: 'bg-sky-900/5',
+        hoverText: 'hover:text-sky-300',
+        text: 'text-sky-400',
+        miniPictures: 'border-sky-400 ring-sky-400/30',
+        primaryBtn: 'from-sky-500/20 to-cyan-500/20 border-sky-500/30',
+        secondaryBtn: 'from-gray-500/20 to-gray-600/20 border-gray-500/30',
+        skillIcon: 'text-sky-400',
+        goalBg: 'from-sky-500/20 to-blue-500/20',
+        goalIcon: 'text-sky-400',
+        processBg: 'from-cyan-500/20 to-teal-500/20',
+        processIcon: 'text-sky-400'
+      };
+    }
+
+    // Yellow theme (yellow-900/50 bg)
+    if (bg.includes('yellow-900')) {
+      return {
+        bg: 'bg-yellow-900/5',
+        hoverText: 'hover:text-amber-300',
+        text: 'text-amber-400',
+        miniPictures: 'border-amber-400 ring-amber-400/30',
+        primaryBtn: 'from-amber-500/20 to-orange-500/20 border-amber-500/30',
+        secondaryBtn: 'from-stone-500/20 to-stone-600/20 border-stone-500/30',
+        skillIcon: 'text-amber-400',
+        goalBg: 'from-amber-500/20 to-yellow-500/20',
+        goalIcon: 'text-amber-400',
+        processBg: 'from-orange-500/20 to-amber-500/20',
+        processIcon: 'text-amber-400'
+      };
+    }
+
+    // Default theme
+    return {
+      bg: 'bg-gray-900/5',
+      hoverText: 'hover:text-green-400',
+      text: 'text-green-400',
+      miniPictures: 'border-neutral-500 ring-neutral-500/30',
+      primaryBtn: 'from-green-500/20 to-teal-500/20 border-green-500/30',
+      secondaryBtn: 'from-gray-500/20 to-gray-600/20 border-gray-500/30',
+      skillIcon: 'text-green-400',
+      goalBg: 'from-blue-500/20 to-purple-500/20',
+      goalIcon: 'text-blue-400',
+      processBg: 'from-green-500/20 to-teal-500/20',
+      processIcon: 'text-green-400'
+    };
+  };
+
+  const theme = getThemeColors();
+
   return (
     <div
       className={`fixed inset-0 z-50 flex items-center justify-center p-4 transition-all duration-300 ${
-        isOpen
-          ? 'opacity-100 visible'
-          : 'opacity-0 invisible'
+        isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
       }`}
-      style={{
-        backgroundColor: isOpen ? 'rgba(0, 0, 0, 0.7)' : 'rgba(0, 0, 0, 0)',
-        backdropFilter: isOpen ? 'blur(8px)' : 'blur(0px)',
-      }}
       onClick={onClose}
     >
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-xl" />
+
       <div
-        className={`relative bg-linear-to-br from-gray-900 to-gray-800 border border-white/20 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl transition-all duration-300 ${
-          isOpen
-            ? 'scale-100 opacity-100 translate-y-0'
-            : 'scale-95 opacity-0 translate-y-4'
+        className={`relative ${theme.bg} backdrop-blur-lg border border-white/20 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl transition-all duration-300 ${
+          isOpen ? 'scale-100 opacity-100 translate-y-0' : 'scale-95 opacity-0 translate-y-4'
         }`}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close button */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 z-10 size-10 flex items-center justify-center bg-gray-800/80 hover:bg-gray-700 border border-white/20 rounded-full text-white transition-all duration-300 hover:scale-110 hover:rotate-90 hover:cursor-pointer"
@@ -80,7 +138,6 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
           <FaTimes />
         </button>
 
-        {/* Image header avec carrousel */}
         <div className="relative h-64 md:h-80 overflow-hidden rounded-t-2xl group">
           <img
             src={allImages[currentImageIndex]}
@@ -89,7 +146,6 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
           />
           <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/50 to-transparent" />
 
-          {/* Navigation carrousel */}
           {allImages.length > 1 && (
             <>
               <button
@@ -107,16 +163,13 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                 <FaChevronRight />
               </button>
 
-              {/* Indicateurs */}
               <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
                 {allImages.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
                     className={`h-2 rounded-full transition-all duration-300 ${
-                      index === currentImageIndex
-                        ? 'w-8 bg-white'
-                        : 'w-2 bg-white/50 hover:bg-white/70'
+                      index === currentImageIndex ? 'w-8 bg-white' : 'w-2 bg-white/50 hover:bg-white/70'
                     }`}
                     aria-label={`Go to image ${index + 1}`}
                   />
@@ -125,32 +178,28 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             </>
           )}
 
-          {/* Project name */}
           <div className="absolute bottom-6 left-6 right-6">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
               {project.name}
             </h2>
             <p className="text-lg text-gray-300">
-              {project.title[currentLang]}
+              {project.title?.en || project.title}
             </p>
           </div>
 
-          {/* Duration badge */}
-          {project.duration[currentLang] && (
+          {project.duration?.en && (
             <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1 bg-gray-900/80 border border-white/20 rounded-full text-sm text-gray-300 backdrop-blur-sm">
               <FaClock />
-              {project.duration[currentLang]}
+              {project.duration.en}
             </div>
           )}
         </div>
 
-        {/* Content */}
         <div className="p-6 md:p-8 space-y-6">
-          {/* Galerie d'images miniatures */}
           {allImages.length > 1 && (
             <div>
               <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-3">
-                { t('project.imageGallery') }
+                Image Gallery
               </h3>
               <div className="grid grid-cols-4 md:grid-cols-6 gap-3">
                 {allImages.map((image, index) => (
@@ -159,7 +208,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                     onClick={() => setCurrentImageIndex(index)}
                     className={`relative aspect-video rounded-lg overflow-hidden border-2 transition-all duration-300 hover:scale-105 ${
                       index === currentImageIndex
-                        ? 'border-blue-500 ring-2 ring-blue-500/50'
+                        ? `ring-2 ${theme.miniPictures}`
                         : 'border-white/20 hover:border-white/40'
                     }`}
                   >
@@ -168,59 +217,48 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                       alt={`${project.name} thumbnail ${index + 1}`}
                       className="w-full h-full object-cover"
                     />
-                    {index === currentImageIndex && (
-                      <div className="absolute inset-0 bg-blue-500/20" />
-                    )}
                   </button>
                 ))}
               </div>
             </div>
           )}
 
-          {/* Goal - Featured projects only */}
-          {project.goal[currentLang] && (
+          {project.goal?.en && (
             <div className="bg-white/5 border border-white/10 rounded-xl p-5 whitespace-pre-line text-justify">
               <div className="flex items-start gap-3">
-                <div className="shrink-0 size-10 flex items-center justify-center bg-linear-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
-                  <FaLightbulb className="text-xl text-blue-400" />
+                <div className={`shrink-0 size-10 flex items-center justify-center bg-linear-to-br ${theme.goalBg} rounded-lg`}>
+                  <FaLightbulb className={`text-xl ${theme.goalIcon}`} />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-white mb-2">
-                    {t('project.goal')}
-                  </h3>
+                  <h3 className="text-lg font-bold text-white mb-2">Goal</h3>
                   <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-wrap">
-                    {formatText(project.goal[currentLang])}
+                    {formatText(project.goal.en)}
                   </p>
                 </div>
               </div>
             </div>
           )}
 
-          {/* Process - Featured projects only */}
-          {project.process?.[currentLang] && (
+          {project.process?.en && (
             <div className="bg-white/5 border border-white/10 rounded-xl p-5 text-justify">
               <div className="flex items-start gap-3">
-                <div className="shrink-0 size-10 flex items-center justify-center bg-linear-to-br from-green-500/20 to-teal-500/20 rounded-lg">
-                  <FaCog className="text-xl text-green-400" />
+                <div className={`shrink-0 size-10 flex items-center justify-center bg-linear-to-br ${theme.processBg} rounded-lg`}>
+                  <FaCog className={`text-xl ${theme.processIcon}`} />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-white mb-2">
-                    {t('project.creationProcess')}
-                  </h3>
+                  <h3 className="text-lg font-bold text-white mb-2">Creation Process</h3>
                   <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-wrap">
-                    {/* {project.process[currentLang]} */}
-                    {formatText(project.process[currentLang])}
+                    {formatText(project.process.en)}
                   </p>
                 </div>
               </div>
             </div>
           )}
 
-          {/* Technologies */}
           {project.technologies && project.technologies.length > 0 && (
             <div>
               <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-3">
-                {t('project.technologiesUsed')}
+                Technologies Used
               </h3>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, index) => (
@@ -235,20 +273,19 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             </div>
           )}
 
-          {/* Skills */}
-          {project.skills?.[currentLang]?.length > 0 && (
+          {project.skills?.en?.length > 0 && (
             <div className="mb-6">
               <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-200 mb-4">
-                <span className="text-green-400">🎯</span>
-                {t('project.skillsDeveloped')}
+                <span className={theme.skillIcon}>🎯</span>
+                Skills Developed
               </h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {project.skills?.[currentLang].map((skill, index) => (
+                {project.skills.en.map((skill, index) => (
                   <li
                     key={index}
-                    className="flex items-start gap-2 text-sm text-gray-300 hover:text-green-400 transition-colors"
+                    className={`flex items-center gap-2 text-sm text-gray-300 ${theme.hoverText} transition-colors`}
                   >
-                    <span className="text-green-500 mt-0.5 shrink-0">✓</span>
+                    <span className={`${theme.text} mt-0.5 shrink-0`}>✓</span>
                     <span>{skill}</span>
                   </li>
                 ))}
@@ -256,34 +293,27 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             </div>
           )}
 
-
-          {/* Links */}
           <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-white/10">
-            {(
-              <a
-                href={project.link || '#'}
-                target={project.link ? "_blank" : undefined}
-                rel={project.link ? "noopener noreferrer" : undefined}
-                onClick={(e) => !project.link && e.preventDefault()}
-                className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-linear-to-r from-green-500/20 to-teal-500/20 border border-green-500/30 rounded-lg text-white transition-all duration-300 ${
-                  project.link
-                    ? 'hover:from-green-500/30 hover:to-teal-500/30 cursor-pointer'
-                    : 'opacity-50 cursor-not-allowed grayscale'
-                }`}
-              >
-                {project.link ? <FaExternalLinkAlt /> : <FaTimes />}
-                {project.link
-                  ? t('project.viewProject')
-                  : t('project.projectOffline')
-                }
-              </a>
-            )}
+            <a
+              href={project.link || '#'}
+              target={project.link ? "_blank" : undefined}
+              rel={project.link ? "noopener noreferrer" : undefined}
+              onClick={(e) => !project.link && e.preventDefault()}
+              className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-linear-to-r border ${theme.primaryBtn} hover:scale-101 hover:shadow-lg rounded-lg text-white transition-all duration-300 ${
+                project.link
+                  ? 'hover:brightness-110 cursor-pointer'
+                  : 'opacity-50 cursor-not-allowed grayscale'
+              }`}
+            >
+              {project.link ? <FaExternalLinkAlt /> : <FaTimes />}
+              {project.link ? 'View Project' : 'Project Offline'}
+            </a>
             {project.github && (
               <a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-white/5 border border-white/20 rounded-lg text-white hover:bg-white/10 transition-all duration-300"
+                className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-linear-to-r border ${theme.secondaryBtn} rounded-lg text-white hover:brightness-110 transition-all duration-300`}
               >
                 <FaGithub />
                 GitHub

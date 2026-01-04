@@ -59,7 +59,7 @@ const SkillModal = ({ skill, isOpen, onClose }) => {
 
       {/* Modal */}
       <div
-        className="relative bg-gray-900/95 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl max-w-3xl w-full max-h-[85vh] overflow-hidden animate-scale-in"
+        className="relative bg-gray-900/60 backdrop-blur-lg border border-white/20 rounded-3xl shadow-2xl max-w-3xl w-full max-h-[85vh] overflow-hidden animate-scale-in"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
