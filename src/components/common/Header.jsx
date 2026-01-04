@@ -139,11 +139,11 @@ const Header = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-300 ${
-            isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          className={`lg:hidden overflow-hidden transition-all duration-300 backdrop-blur-xl ${
+            isOpen ? "max-h-96 opacity-100 mt-2 mb-4" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="py-4 space-y-2 bg-gray-950/50 backdrop-blur-xl rounded-2xl mt-2 p-4 border border-white/10">
+          <div className="space-y-2 bg-gray-950/50 rounded-2xl border border-white/10">
             {navLinks.map((link) => (
               <a
                 key={link.href}

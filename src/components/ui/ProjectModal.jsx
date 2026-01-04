@@ -44,12 +44,9 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
   // Theme colors with complementary palettes
   const getThemeColors = () => {
-    const bg = project.theme || 'gray-900';
-
-    // Blue theme (blue-900/50 bg)
-    if (bg.includes('blue-900')) {
+    if (project.id == 'pawnarena') {
       return {
-        bg: 'bg-blue-900/5',
+        bg: 'bg-stone-900/60',
         hoverText: 'hover:text-blue-300',
         text: 'text-blue-400',
         miniPictures: 'border-blue-400 ring-blue-400/30',
@@ -63,27 +60,25 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
       };
     }
 
-    // Sky theme (sky-800/10 bg)
-    if (bg.includes('sky-900')) {
+    if (project.id == 'city-hunters') {
       return {
-        bg: 'bg-sky-900/5',
-        hoverText: 'hover:text-sky-300',
-        text: 'text-sky-400',
-        miniPictures: 'border-sky-400 ring-sky-400/30',
-        primaryBtn: 'from-sky-500/20 to-cyan-500/20 border-sky-500/30',
+        bg: 'bg-stone-900/60',
+        hoverText: 'hover:text-yellow-400',
+        text: 'text-yellow-400',
+        miniPictures: 'border-yellow-400 ring-yellow-400/30',
+        primaryBtn: 'from-yellow-500/20 to-yellow-500/20 border-yellow-500/30',
         secondaryBtn: 'from-gray-500/20 to-gray-600/20 border-gray-500/30',
-        skillIcon: 'text-sky-400',
-        goalBg: 'from-sky-500/20 to-blue-500/20',
-        goalIcon: 'text-sky-400',
-        processBg: 'from-cyan-500/20 to-teal-500/20',
-        processIcon: 'text-sky-400'
+        skillIcon: 'text-yellow-400',
+        goalBg: 'from-yellow-500/20 to-red-500/20',
+        goalIcon: 'text-yellow-400',
+        processBg: 'from-yellow-500/20 to-teal-500/20',
+        processIcon: 'text-yellow-400'
       };
     }
 
-    // Yellow theme (yellow-900/50 bg)
-    if (bg.includes('yellow-900')) {
+    if (project.id == 'showsfx') {
       return {
-        bg: 'bg-yellow-900/5',
+        bg: 'bg-stone-900/60',
         hoverText: 'hover:text-amber-300',
         text: 'text-amber-400',
         miniPictures: 'border-amber-400 ring-amber-400/30',
@@ -99,7 +94,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
     // Default theme
     return {
-      bg: 'bg-gray-900/5',
+      bg: 'bg-gray-950/10',
       hoverText: 'hover:text-green-400',
       text: 'text-green-400',
       miniPictures: 'border-neutral-500 ring-neutral-500/30',
@@ -122,7 +117,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
       }`}
       onClick={onClose}
     >
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-xl" />
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-xl" />
 
       <div
         className={`relative ${theme.bg} backdrop-blur-lg border border-white/20 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl transition-all duration-300 ${
@@ -225,33 +220,29 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
           {project.goal?.en && (
             <div className="bg-white/5 border border-white/10 rounded-xl p-5 whitespace-pre-line text-justify">
-              <div className="flex items-start gap-3">
-                <div className={`shrink-0 size-10 flex items-center justify-center bg-linear-to-br ${theme.goalBg} rounded-lg`}>
+              <div className="flex gap-4 items-center mb-3">
+                <div className={`shrink-0 size-10 col-span-1 flex items-center justify-center bg-linear-to-br ${theme.goalBg} rounded-lg`}>
                   <FaLightbulb className={`text-xl ${theme.goalIcon}`} />
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-bold text-white mb-2">Goal</h3>
-                  <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-wrap">
-                    {formatText(project.goal.en)}
-                  </p>
-                </div>
+                <h3 className="text-lg font-bold text-white">Goal</h3>
               </div>
+              <p className="sm:ml-14 text-sm col-start-2 text-gray-300 leading-relaxed whitespace-pre-wrap">
+                {formatText(project.goal.en)}
+              </p>
             </div>
           )}
 
           {project.process?.en && (
             <div className="bg-white/5 border border-white/10 rounded-xl p-5 text-justify">
-              <div className="flex items-start gap-3">
+              <div className="flex items-center gap-4 mb-3">
                 <div className={`shrink-0 size-10 flex items-center justify-center bg-linear-to-br ${theme.processBg} rounded-lg`}>
                   <FaCog className={`text-xl ${theme.processIcon}`} />
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-bold text-white mb-2">Creation Process</h3>
-                  <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-wrap">
-                    {formatText(project.process.en)}
-                  </p>
-                </div>
+                <h3 className="text-lg font-bold text-white">Creation Process</h3>
               </div>
+              <p className="sm:ml-14 text-sm text-gray-300 leading-relaxed whitespace-pre-wrap">
+                {formatText(project.process.en)}
+              </p>
             </div>
           )}
 
