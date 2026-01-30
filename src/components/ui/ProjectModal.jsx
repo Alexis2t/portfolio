@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { FaTimes, FaExternalLinkAlt, FaGithub, FaClock, FaLightbulb, FaCog, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const ProjectModal = ({ project, isOpen, onClose }) => {
+  const { i18n } = useTranslation();
+  const currentLang = i18n.language;
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -178,14 +182,14 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               {project.name}
             </h2>
             <p className="text-lg text-gray-300">
-              {project.title?.en || project.title}
+              {project.title[currentLang]}
             </p>
           </div>
 
-          {project.duration?.en && (
+          {project.duration[currentLang] && (
             <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1 bg-gray-900/80 border border-white/20 rounded-full text-sm text-gray-300 backdrop-blur-sm">
               <FaClock />
-              {project.duration.en}
+              {project.duration[currentLang]}
             </div>
           )}
         </div>
@@ -218,7 +222,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             </div>
           )}
 
-          {project.goal?.en && (
+          {project.goal[currentLang] && (
             <div className="bg-white/5 border border-white/10 rounded-xl p-5 whitespace-pre-line text-justify">
               <div className="flex gap-4 items-center mb-3">
                 <div className={`shrink-0 size-10 col-span-1 flex items-center justify-center bg-linear-to-br ${theme.goalBg} rounded-lg`}>
@@ -227,12 +231,12 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                 <h3 className="text-lg font-bold text-white">Goal</h3>
               </div>
               <p className="sm:ml-14 text-sm col-start-2 text-gray-300 leading-relaxed whitespace-pre-wrap">
-                {formatText(project.goal.en)}
+                {formatText(project.goal[currentLang])}
               </p>
             </div>
           )}
 
-          {project.process?.en && (
+          {project.process[currentLang] && (
             <div className="bg-white/5 border border-white/10 rounded-xl p-5 text-justify">
               <div className="flex items-center gap-4 mb-3">
                 <div className={`shrink-0 size-10 flex items-center justify-center bg-linear-to-br ${theme.processBg} rounded-lg`}>
@@ -241,7 +245,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                 <h3 className="text-lg font-bold text-white">Creation Process</h3>
               </div>
               <p className="sm:ml-14 text-sm text-gray-300 leading-relaxed whitespace-pre-wrap">
-                {formatText(project.process.en)}
+                {formatText(project.process[currentLang])}
               </p>
             </div>
           )}
@@ -264,14 +268,14 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             </div>
           )}
 
-          {project.skills?.en?.length > 0 && (
+          {project.skills[currentLang]?.length > 0 && (
             <div className="mb-6">
               <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-200 mb-4">
                 <span className={theme.skillIcon}>🎯</span>
                 Skills Developed
               </h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {project.skills.en.map((skill, index) => (
+                {project.skills[currentLang].map((skill, index) => (
                   <li
                     key={index}
                     className={`flex items-center gap-2 text-sm text-gray-300 ${theme.hoverText} transition-colors`}

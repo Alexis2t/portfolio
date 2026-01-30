@@ -15,7 +15,7 @@ export const experiencesData = [
       en: "I designed and developed Pawn Arena, a dynamic platform for managing over-the-board chess tournaments.\nThe project gave me the opportunity to work across the entire stack, from the Rails backend to the Vue.js frontend, including advanced SQL query optimization and granular user access management.\nI also integrated complex modules for match tracking, federation data management, and automatic pairing of rounds according to the Swiss system.\nThis project helped me strengthen my full-stack web development, UX/UI design, and long-term technical project management skills.",
     },
     tasks: {
-      fr: ["Conception du design UX/UI", "Développement backend et base de données", "Création du frontend", "Optimisation des performances SQL", "Gestion asynchrone des tâches lourdes", "Adaptation au systèmes de données externes", "Optimisation du back-end et websocket jusqu'à 1000 joueurs par tournoi"],
+      fr: ["Conception du design UX/UI", "Développement backend et base de données", "Création du frontend", "Optimisation des performances SQL", "Gestion asynchrone des tâches lourdes", "Adaptation aux systèmes de données externes", "Optimisation du back-end et websocket jusqu'à 1000 joueurs par tournoi"],
       en: [],
     },
     technologies: [
@@ -24,7 +24,8 @@ export const experiencesData = [
       "Vuejs",
       "Vite",
       "Docker",
-      "Fly.io",
+      "Nginx",
+      "Redis",
     ]
   },
   {
